@@ -6,6 +6,11 @@ object Dependencies {
 
         const val gradlePlugin = "gradle-plugin"
     }
+
+    object KotlinX {
+        const val coroutinesMt = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0-RC-native-mt"
+    }
+
     object Android {
         private const val agpVersion = "4.1.1"
 
