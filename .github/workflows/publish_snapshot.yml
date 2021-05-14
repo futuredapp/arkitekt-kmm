@@ -15,7 +15,7 @@ jobs:
         with:
           java-version: 1.8
       - name: Build & publish snapshot
-        run: ./gradlew publish --no-daemon --no-parallel --stacktracee
+        run: ./gradlew publish --no-daemon --no-parallel --stacktrace
         env:
           ORG_GRADLE_PROJECT_mavenCentralRepositoryUsername: ${{ secrets.MAVEN_CENTRAL_REPOSITORY_USERNAME }}
           ORG_GRADLE_PROJECT_mavenCentralRepositoryPassword: ${{ secrets.MAVEN_CENTRAL_REPOSITORY_PASSWORD }}
