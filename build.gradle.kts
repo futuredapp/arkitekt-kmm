@@ -1,6 +1,3 @@
-group = "app.futured.arkitekt"
-version = "1.0-SNAPSHOT"
-
 buildscript {
     repositories {
         google()
