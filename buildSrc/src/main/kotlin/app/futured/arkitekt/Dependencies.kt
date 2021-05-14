@@ -16,4 +16,14 @@ object Dependencies {
 
         const val gradlePlugin = "com.android.tools.build:gradle:$agpVersion"
     }
+
+    object MavenPublish {
+        private const val version = "0.14.2"
+        const val plugin = "com.vanniktech:gradle-maven-publish-plugin:$version"
+    }
+
+    object Dokka {
+        private const val version = "1.4.20"
+        const val plugin = "org.jetbrains.dokka:dokka-gradle-plugin:$version"
+    }
 }
