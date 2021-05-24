@@ -9,6 +9,8 @@ group = "app.futured.arkitekt"
 version = "0.1.0-SNAPSHOT"
 
 repositories {
+    // for dokkaHtml, todo remove when dokkaHtml is available at mavenCentral (ver 0.7.3 isn't)
+    maven { url = uri("https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven") }
     mavenCentral()
 }
 
