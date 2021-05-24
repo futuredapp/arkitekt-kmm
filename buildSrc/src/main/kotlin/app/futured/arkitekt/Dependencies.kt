@@ -8,7 +8,7 @@ object Dependencies {
     }
 
     object KotlinX {
-        const val coroutinesMt = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0-RC-native-mt"
+        const val coroutinesMt = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0-native-mt"
     }
 
     object Android {
