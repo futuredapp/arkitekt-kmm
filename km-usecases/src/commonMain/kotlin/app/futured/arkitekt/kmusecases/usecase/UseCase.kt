@@ -54,8 +54,7 @@ abstract class UseCase<Arg, ReturnType> {
             }.freeze()
     }
 
-    //    private suspend fun buildOnBg(arg: Arg) = withContext(workerDispatcher) {
-    private suspend fun buildOnBg(arg: Arg) = withContext(Dispatchers.Default) {
+    private suspend fun buildOnBg(arg: Arg) = withContext(workerDispatcher) {
         this@UseCase.build(arg)
     }
 

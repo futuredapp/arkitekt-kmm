@@ -6,10 +6,10 @@ import app.futured.arkitekt.kmusecases.workerDispatcher
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 
-public actual interface CoroutineScopeOwner {
-    public actual val coroutineScope: CoroutineScope
+actual interface CoroutineScopeOwner {
+    actual val coroutineScope: CoroutineScope
 
-    public fun <Arg, ReturnType> UseCase<Arg, ReturnType>.execute(
+    fun <Arg, ReturnType> UseCase<Arg, ReturnType>.execute(
         arg: Arg,
         config: UseCaseConfig.Builder<ReturnType>.() -> Unit
     ) {
@@ -30,7 +30,10 @@ public actual interface CoroutineScopeOwner {
         onSuccess: (ReturnType) -> Unit,
         onError: (Throwable) -> Unit
     ): Job {
-        return coroutineScope.async { uc.build(arg) }
+        return coroutineScope.async(
+            context = workerDispatcher,
+            start = CoroutineStart.LAZY
+        ) { uc.build(arg) }
             .also {
                 coroutineScope.launch {
                     kotlin.runCatching { it.await() }

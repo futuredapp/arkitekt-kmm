@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "app.futured.arkitekt"
-version = "0.1.0-SNAPSHOT"
+version = "0.1.1-SNAPSHOT"
 
 repositories {
     // for dokkaHtml, todo remove when dokkaHtml is available at mavenCentral (ver 0.7.3 isn't)
