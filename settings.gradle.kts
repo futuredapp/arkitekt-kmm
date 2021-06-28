@@ -14,3 +14,4 @@ pluginManagement {
 }
 rootProject.name = "arkitekt-kmm"
 include("km-usecases")
+include("km-viewmodel")
