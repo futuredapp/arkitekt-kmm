@@ -9,6 +9,7 @@ object Dependencies {
 
     object KotlinX {
         const val coroutinesMt = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0-native-mt"
+        const val serialization = "org.jetbrains.kotlin:kotlin-serialization:1.5.10"
     }
 
     object Android {

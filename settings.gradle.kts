@@ -15,3 +15,7 @@ pluginManagement {
 rootProject.name = "arkitekt-kmm"
 include("km-usecases")
 include("km-viewmodel")
+include("kmm-example")
+include("kmm-example:shared")
+include("kmm-example:androidApp")
+//include("kmm-example:iosApp")

@@ -1,0 +1,2 @@
+app/futured/arkitekt/kmmexample/test/BuildConfig.java
+ app.futured.arkitekt.kmmexample.test.BuildConfig

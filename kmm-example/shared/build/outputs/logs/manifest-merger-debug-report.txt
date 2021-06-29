@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml:2:1-55
+INJECTED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml:2:1-55
+INJECTED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml:2:1-55
+	package
+		ADDED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml:2:11-52
+		INJECTED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml
+		INJECTED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml:2:1-55
+uses-sdk
+INJECTED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml
+INJECTED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml
+INJECTED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml
+INJECTED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml
+		ADDED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml
+		INJECTED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml
+		ADDED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml
+		INJECTED from /Users/rd/AndroidStudioProjects/Futured/arkitekt-kmm/kmm-example/shared/src/androidMain/AndroidManifest.xml

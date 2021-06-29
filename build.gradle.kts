@@ -13,6 +13,7 @@ buildscript {
         )
         classpath(app.futured.arkitekt.Dependencies.MavenPublish.plugin)
         classpath(app.futured.arkitekt.Dependencies.Dokka.plugin)
+        classpath(app.futured.arkitekt.Dependencies.KotlinX.serialization)
     }
 }
 
@@ -26,6 +27,9 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven {
+            setUrl("https://oss.sonatype.org/content/repositories/snapshots/")
+        }
     }
 }
 
