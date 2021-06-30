@@ -1,8 +1,9 @@
-package app.futured.arkitekt.kmmexample
+package app.futured.arkitekt.kmmexample.androidApp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import app.futured.arkitekt.kmmexample.Greeting
 
 fun greet(): String {
     return Greeting().greeting()
