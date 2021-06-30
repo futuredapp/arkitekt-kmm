@@ -24,3 +24,6 @@ xcuserdata/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.gitignore.io/api/xcode
+
+# CocoaPods folder which can be regenerated
+Pods
