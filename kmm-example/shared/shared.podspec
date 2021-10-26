@@ -32,15 +32,15 @@ Pod::Spec.new do |spec|
             :execution_position => :before_compile,
             :shell_path => '/bin/sh',
             :script => <<-SCRIPT
-                set -ev
-                REPO_ROOT="$PODS_TARGET_SRCROOT"
-                "$REPO_ROOT/../../../../../../../private/var/folders/mj/rdpnb38s1fn0y2rrtr435qjw0000gn/T/wrap9095loc/gradlew" -p "$REPO_ROOT" :kmm-example:shared:syncFramework \
-                    -Pkotlin.native.cocoapods.target=$KOTLIN_TARGET \
-                    -Pkotlin.native.cocoapods.configuration=$CONFIGURATION \
-                    -Pkotlin.native.cocoapods.cflags="$OTHER_CFLAGS" \
-                    -Pkotlin.native.cocoapods.paths.headers="$HEADER_SEARCH_PATHS" \
-                    -Pkotlin.native.cocoapods.paths.frameworks="$FRAMEWORK_SEARCH_PATHS"
-            SCRIPT
+			   set -ev
+			   REPO_ROOT="$PODS_TARGET_SRCROOT"
+			   "$REPO_ROOT/../gradlew" -p "$REPO_ROOT" :shared:syncFramework \
+				   -Pkotlin.native.cocoapods.target=$KOTLIN_TARGET \
+				   -Pkotlin.native.cocoapods.configuration=$CONFIGURATION \
+				   -Pkotlin.native.cocoapods.cflags="$OTHER_CFLAGS" \
+				   -Pkotlin.native.cocoapods.paths.headers="$HEADER_SEARCH_PATHS" \
+				   -Pkotlin.native.cocoapods.paths.frameworks="$FRAMEWORK_SEARCH_PATHS"
+		   SCRIPT
         }
     ]
 end

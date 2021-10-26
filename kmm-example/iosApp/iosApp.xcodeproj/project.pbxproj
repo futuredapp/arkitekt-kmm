@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A5CBE1B8335299B44210ED3 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832BF0E103578FF410FBF4A8 /* Pods_iosApp.framework */; };
 		71547C00268A076A004A9407 /* iosAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71547BFF268A076A004A9407 /* iosAppApp.swift */; };
 		71547C02268A076A004A9407 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71547C01268A076A004A9407 /* ContentView.swift */; };
 		71547C04268A076C004A9407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71547C03268A076C004A9407 /* Assets.xcassets */; };
 		71547C07268A076C004A9407 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71547C06268A076C004A9407 /* Preview Assets.xcassets */; };
+		ED416176AD54489E13E79B4A /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D7684C02B0FC48A8A5B436A /* Pods_iosApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D7684C02B0FC48A8A5B436A /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F78F5D0FC53D8F40E2998D3 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 		71547BFC268A076A004A9407 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71547BFF268A076A004A9407 /* iosAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosAppApp.swift; sourceTree = "<group>"; };
 		71547C01268A076A004A9407 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		71547C03268A076C004A9407 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71547C06268A076C004A9407 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		71547C08268A076C004A9407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		832BF0E103578FF410FBF4A8 /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5886B370133FC3FBE52BC9E /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
-		B3E4C4A2F566751CADE72212 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
+		AAF33F9F0CB23AC668E564F1 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A5CBE1B8335299B44210ED3 /* Pods_iosApp.framework in Frameworks */,
+				ED416176AD54489E13E79B4A /* Pods_iosApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,7 +44,7 @@
 				71547BFE268A076A004A9407 /* iosApp */,
 				71547BFD268A076A004A9407 /* Products */,
 				B25DAE4B7D81E3EABDF77209 /* Pods */,
-				C16128998B53AF4DED0AEF1D /* Frameworks */,
+				C429A722FAD9CB9ED63CDAC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,16 +79,16 @@
 		B25DAE4B7D81E3EABDF77209 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B3E4C4A2F566751CADE72212 /* Pods-iosApp.debug.xcconfig */,
-				A5886B370133FC3FBE52BC9E /* Pods-iosApp.release.xcconfig */,
+				AAF33F9F0CB23AC668E564F1 /* Pods-iosApp.debug.xcconfig */,
+				3F78F5D0FC53D8F40E2998D3 /* Pods-iosApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		C16128998B53AF4DED0AEF1D /* Frameworks */ = {
+		C429A722FAD9CB9ED63CDAC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				832BF0E103578FF410FBF4A8 /* Pods_iosApp.framework */,
+				1D7684C02B0FC48A8A5B436A /* Pods_iosApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -100,7 +100,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71547C0B268A076C004A9407 /* Build configuration list for PBXNativeTarget "iosApp" */;
 			buildPhases = (
-				DF8097FA6CB64D86A5A2713C /* [CP] Check Pods Manifest.lock */,
+				591FA1F159DD63DD702E2C98 /* [CP] Check Pods Manifest.lock */,
 				71547BF8268A076A004A9407 /* Sources */,
 				71547BF9268A076A004A9407 /* Frameworks */,
 				71547BFA268A076A004A9407 /* Resources */,
@@ -159,7 +159,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DF8097FA6CB64D86A5A2713C /* [CP] Check Pods Manifest.lock */ = {
+		591FA1F159DD63DD702E2C98 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -314,7 +314,7 @@
 		};
 		71547C0C268A076C004A9407 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3E4C4A2F566751CADE72212 /* Pods-iosApp.debug.xcconfig */;
+			baseConfigurationReference = AAF33F9F0CB23AC668E564F1 /* Pods-iosApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -337,7 +337,7 @@
 		};
 		71547C0D268A076C004A9407 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5886B370133FC3FBE52BC9E /* Pods-iosApp.release.xcconfig */;
+			baseConfigurationReference = 3F78F5D0FC53D8F40E2998D3 /* Pods-iosApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
