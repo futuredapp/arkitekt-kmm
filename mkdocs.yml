@@ -48,9 +48,9 @@ extra:
 # Page tree
 nav:
   - About:
-    - Overview: Overview/index.md
-    - Installation: Overview/installation.md
+    - Overview: docs/Overview/index.md
+    - Installation: docs/Overview/installation.md
   - UseCases:
-     - UseCase usage: UseCases/UseCase.md
-     - FlowUseCase usage: UseCases/FlowUseCase.md
-#  - ViewModel: ArkitektViewModel/index.md
+     - UseCase usage: docs/UseCases/UseCase.md
+     - FlowUseCase usage: docs/UseCases/FlowUseCase.md
+#  - ViewModel: docs/ArkitektViewModel/index.md
