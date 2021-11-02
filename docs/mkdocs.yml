@@ -1,0 +1,56 @@
+# Project information
+site_name: KMM Arkitekt
+
+# Repository
+repo_url: https://github.com/futuredapp/arkitekt-kmm
+repo_name: futuredapp/arkitekt-kmm
+
+theme:
+  name: null
+  custom_dir: ../../../mkdocs-material/material
+
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+
+  # 404 page
+  static_templates:
+    - 404.html
+
+  # Necessary for search to work properly
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  icon:
+    logo: logo
+
+# Social
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/Futuredapps
+      name: Futured on Twitter
+    - icon: fontawesome/brands/github
+      link: https://github.com/futuredapp
+      name: Futured on GitHub
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/futuredapps/
+      name: Futured on Instagram
+
+# Page tree
+nav:
+  - About:
+    - Overview: Overview/index.md
+    - Installation: Overview/installation.md
+  - UseCases:
+     - UseCase usage: UseCases/UseCase.md
+     - FlowUseCase usage: UseCases/FlowUseCase.md
+#  - ViewModel: ArkitektViewModel/index.md
