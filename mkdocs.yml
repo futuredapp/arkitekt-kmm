@@ -48,7 +48,7 @@ extra:
 # Page tree
 nav:
   - About:
-    - Overview: docs/Overview/index.md
+    - Overview: index.md
     - Installation: docs/Overview/installation.md
   - UseCases:
      - UseCase usage: docs/UseCases/UseCase.md
