@@ -24,7 +24,7 @@ class ObserveCoinsUseCase : FlowUseCase<Unit, List<Coin>>() {
 
 Note that only the flow will be executed on non-ui thread. The rest of the `build` function will be executed on ui thread.
 
-## Execute UseCase
+## Execute FlowUseCase
 
 To be able to execute the FlowUseCase you have to be in the scope of `CoroutineScopeOwner`. On the Android side
 you can take advantage of `viewModelScope` from Android Architecture Components (AAC). On the iOS side
