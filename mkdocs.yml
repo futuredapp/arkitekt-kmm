@@ -6,8 +6,7 @@ repo_url: https://github.com/futuredapp/arkitekt-kmm
 repo_name: futuredapp/arkitekt-kmm
 
 theme:
-  name: null
-  custom_dir: ../../../mkdocs-material/material
+  name: material
 
   features:
     - navigation.instant
