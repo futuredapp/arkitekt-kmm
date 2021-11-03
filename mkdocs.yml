@@ -32,6 +32,10 @@ theme:
   icon:
     logo: logo
 
+markdown_extensions:
+  - codehilite:
+      guess_lang: false
+
 # Social
 extra:
   social:
