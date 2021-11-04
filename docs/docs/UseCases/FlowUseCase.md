@@ -107,3 +107,11 @@ class CoinsViewModel : BaseViewModel, ObservableObject {
     }
 }
 ```
+
+## UseCase usage
+
+Head out to [UseCase](docs/UseCases/UseCase.md) section.
+
+## Example
+
+Check out the usage in the [example](https://github.com/RudolfHladik/Template)
