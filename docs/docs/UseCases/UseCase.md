@@ -109,7 +109,7 @@ class CoinsViewModel : BaseViewModel, ObservableObject {
 
 ## FlowUseCase usage
 
-Head out to [FlowUseCase](docs/UseCases/FlowUseCase.md) section.
+Head out to [FlowUseCase](FlowUseCase.md) section.
 
 ## Example
 
