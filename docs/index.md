@@ -24,6 +24,10 @@ Another module consist `ArktitektViewModel` which will help with maintaining `Co
 
 - `ArktitektViewModel` creates `CoroutineScope` and manages it
 
+## Installation
+
+Head out to [Installation](docs/Overview/installation.md) section.
+
 ## Example
 
 Check out the usage in the [example](https://github.com/RudolfHladik/Template)

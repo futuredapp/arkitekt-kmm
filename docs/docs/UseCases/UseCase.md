@@ -106,3 +106,11 @@ class CoinsViewModel : BaseViewModel, ObservableObject {
     }
 }
 ```
+
+## FlowUseCase usage
+
+Head out to [FlowUseCase](docs/UseCases/FlowUseCase.md) section.
+
+## Example
+
+Check out the usage in the [example](https://github.com/RudolfHladik/Template)
