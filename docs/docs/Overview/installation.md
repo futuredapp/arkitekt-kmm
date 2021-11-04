@@ -59,4 +59,4 @@ kotlin {
 
 ## Usage
 
-Now you are all set up, head to the [Usage](docs/UseCases/UseCase.md)
+Now you are all set up, head to the [Usage](docs/UseCases/UseCase.md) section.
