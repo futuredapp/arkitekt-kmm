@@ -5,7 +5,7 @@ Argument type, the second is to define Return type. FlowUseCase will always retu
 The flow will be executed on non-ui thread. Don't forget to `freeze()` the FlowUseCase in `init` block.
 Any properties has to be initialized/injected above the init block because of freezing.
 
-```kotlin
+```kotlin 
 // shared/src/commonMain/../domain/
 class ObserveCoinsUseCase : FlowUseCase<Unit, List<Coin>>() {
     private val coinStore: CoinStore = CoinStore(RestApiManager, DatabaseManager)
@@ -22,7 +22,7 @@ class ObserveCoinsUseCase : FlowUseCase<Unit, List<Coin>>() {
 }
 ```
 
-Note that only the flow will be executed on non-ui thread. The rest of the `build` function will be executed on ui thread.
+Note that only the flow will be executed on non-ui thread. The rest of the `build` function will be executed on UI thread.
 
 ## Execute FlowUseCase
 
@@ -33,22 +33,21 @@ e.g. in a Service, you need to implement `CoroutineScopeOwner` and provide `Coro
 
 ### Usage on Android
 
-Define a BaseViewModel
+Define a BaseViewModel:
 
-```kotlin
+```kotlin 
 // androidApp
-
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import app.futured.arkitekt.kmusecases.scope.CoroutineScopeOwner
 
-abstract class BaseViewModel : ViewModel() , CoroutineScopeOwner {
+abstract class BaseViewModel : ViewModel(), CoroutineScopeOwner {
 
     override val coroutineScope = viewModelScope
 }
 ```
 
-Execute the UseCase
+Execute the UseCase:
 
 ```kotlin
 class CoinsViewModel : BaseViewModel() {
@@ -75,6 +74,7 @@ class CoinsViewModel : BaseViewModel() {
 ### Usage on iOS
 
 ```swift
+// iosApp
 import shared
 
 class BaseViewModel : Km_viewmodelArkitektViewModel {
@@ -85,9 +85,10 @@ class BaseViewModel : Km_viewmodelArkitektViewModel {
 }
 ```
 
-Execute the UseCase
+Execute the UseCase:
 
 ```swift
+// iosApp
 import shared
 
 class CoinsViewModel : BaseViewModel, ObservableObject {

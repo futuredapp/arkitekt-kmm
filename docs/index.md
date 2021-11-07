@@ -1,26 +1,27 @@
 # Overview
 
-## Arkitekt kmm
+## Arkitekt KMM
 
-Is a Kotlin multiplatform mobile library that helps you with
-abstraction of Usecase as a component from clean architecture.
-Its main objective is separation of concerns and better domain modeling.
-It is backed by `Kotlinx Coroutines`
+Arkitekt KMM is a Kotlin Multiplatform Mobile library that helps you with
+the abstraction of a use cases, known as one of the building blocks of the Clean Architecture.
+Its main objective is a separation of concerns and better domain modeling.
+It is backed by [`Kotlin Coroutines`](https://kotlinlang.org/docs/coroutines-overview.html).
 
 ## Benefits
-- delegate work to background thread
-- cancel on re-execution (optional)
-- error handling
-- auto-cancel of coroutine context
+- Delegate work to a background thread
+- Cancel on re-execution (optional)
+- Error handling
+- Auto-cancellation when is the related coroutine scope terminated
 
 ## Content
 
-Library contains two main parts `UseCase` and `FlowUseCase`
+The module `km-usecases` provides two main components - `UseCase` and `FlowUseCase`:
 
-- `UseCase` is for events that return single response. (e.g. REST API call GET, POST...)
-- `FlowUseCase` is for events that return multiple responses. (e.g. Location data updates...)
+- `UseCase` is for events that return a single response (e.g. REST API call GET, POST...).
+- `FlowUseCase` is for events that return multiple responses (e.g. Location data updates...).
 
-Another module consist `ArktitektViewModel` which will help with maintaining `CoroutineScope` on iOS platform 
+Another module, `km-viewmodel` consists `ArktitektViewModel` which will help with maintaining 
+`CoroutineScope` on iOS platform:
 
 - `ArktitektViewModel` creates `CoroutineScope` and manages it
 
@@ -30,6 +31,6 @@ Head out to [Installation](docs/Overview/installation.md) section.
 
 ## Example
 
-Check out the usage in the [example](https://github.com/RudolfHladik/Template)
+Check out the usage in the [example](https://github.com/RudolfHladik/Template).
 
 
