@@ -5,7 +5,8 @@ Argument type, the second is to define Return type. FlowUseCase will always retu
 The flow will be executed on non-ui thread. Don't forget to `freeze()` the FlowUseCase in `init` block.
 Any properties has to be initialized/injected above the init block because of freezing.
 
-```kotlin title="shared/src/commonMain/../domain/"
+```kotlin 
+// shared/src/commonMain/../domain/
 class ObserveCoinsUseCase : FlowUseCase<Unit, List<Coin>>() {
     private val coinStore: CoinStore = CoinStore(RestApiManager, DatabaseManager)
 
@@ -34,7 +35,8 @@ e.g. in a Service, you need to implement `CoroutineScopeOwner` and provide `Coro
 
 Define a BaseViewModel:
 
-```kotlin title="androidApp"
+```kotlin 
+// androidApp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import app.futured.arkitekt.kmusecases.scope.CoroutineScopeOwner
@@ -72,6 +74,7 @@ class CoinsViewModel : BaseViewModel() {
 ### Usage on iOS
 
 ```swift
+// iosApp
 import shared
 
 class BaseViewModel : Km_viewmodelArkitektViewModel {
@@ -85,6 +88,7 @@ class BaseViewModel : Km_viewmodelArkitektViewModel {
 Execute the UseCase:
 
 ```swift
+// iosApp
 import shared
 
 class CoinsViewModel : BaseViewModel, ObservableObject {

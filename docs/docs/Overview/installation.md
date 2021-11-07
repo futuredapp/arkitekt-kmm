@@ -1,12 +1,13 @@
 # Installation
 
-## How to use in your project
+## Setup project
 
 Arkitekt-KMM is a Kotlin Multiplatform Mobile library, so you have to use it in KMM project.
 First, add sonatype repository to your project `build.gradle.kts` as this library is currently 
 available as a snapshot:
 
-```kotlin title="project level build.gradle.kts"
+```kotlin 
+// project root build.gradle.kts
 buildscript {
     repositories {
         gradlePluginPortal()
@@ -29,13 +30,14 @@ allprojects {
 ```
 
 Second, add the dependency to your `shared/build.gradle.kts` as a `commonMain` dependency. We recommend
-adding it as `api` configuration instead of `implementation` as it will expose the library for the 
-Android app. We also recommend adding `km-viewmodel` to `iosMain` and making usage on iOS easier and
-more convenient.
+to add it as `api` configuration instead of `implementation` as it will expose the library for the 
+Android app. We also recommend to add `km-viewmodel` to `iosMain` as well as it makes usage on iOS easier
+and more convenient.
 
 ## Setup shared module
 
-```kotlin title="shared module build.gradle.kts"
+```kotlin 
+// shared module build.gradle.kts
 kotlin {
     ios()
     android()
