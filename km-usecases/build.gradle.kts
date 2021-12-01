@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "app.futured.arkitekt"
-version = "0.1.1-SNAPSHOT"
+version = "0.2.0-SNAPSHOT-MM"
 
 repositories {
     // for dokkaHtml, todo remove when dokkaHtml is available at mavenCentral (ver 0.7.3 isn't)
@@ -45,7 +45,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(app.futured.arkitekt.Dependencies.KotlinX.coroutinesMt)
+                implementation(app.futured.arkitekt.Dependencies.KotlinX.coroutines)
             }
         }
         val commonTest by getting {
@@ -67,10 +67,10 @@ kotlin {
 }
 
 android {
-    compileSdkVersion(30)
+    compileSdk = 30
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdkVersion(24)
-        targetSdkVersion(30)
+        minSdk = 24
+        targetSdk = 30
     }
 }

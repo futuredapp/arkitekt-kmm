@@ -2,17 +2,20 @@ package app.futured.arkitekt
 
 object Dependencies {
     object Kotlin {
-        const val version = "1.5.0"
+        const val version = "1.6.0"
 
         const val gradlePlugin = "gradle-plugin"
     }
 
     object KotlinX {
-        const val coroutinesMt = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0-native-mt"
+        const val version = "1.6.0-RC"
+
+        const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
     }
 
     object Android {
-        private const val agpVersion = "4.1.1"
+//        private const val agpVersion = "4.1.1"
+        private const val agpVersion = "7.0.0"
 
         const val gradlePlugin = "com.android.tools.build:gradle:$agpVersion"
     }
