@@ -2,7 +2,7 @@ name: Publish snapshot
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, feature/newNativeMemoryModel ]
 
 jobs:
   build:
