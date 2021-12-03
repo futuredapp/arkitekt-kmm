@@ -14,7 +14,6 @@ object Dependencies {
     }
 
     object Android {
-//        private const val agpVersion = "4.1.1"
         private const val agpVersion = "7.0.0"
 
         const val gradlePlugin = "com.android.tools.build:gradle:$agpVersion"
