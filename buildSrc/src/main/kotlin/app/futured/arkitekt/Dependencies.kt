@@ -20,7 +20,7 @@ object Dependencies {
     }
 
     object MavenPublish {
-        private const val version = "0.14.2"
+        private const val version = "0.18.0"
         const val plugin = "com.vanniktech:gradle-maven-publish-plugin:$version"
     }
 
