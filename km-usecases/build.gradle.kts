@@ -6,6 +6,10 @@ plugins {
 }
 
 group = "app.futured.arkitekt"
+/*
+ This version supports New Native Memory Model
+ https://github.com/JetBrains/kotlin/blob/master/kotlin-native/NEW_MM.md
+ */
 version = "0.2.0-SNAPSHOT-MM"
 
 repositories {
