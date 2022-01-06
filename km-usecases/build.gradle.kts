@@ -10,7 +10,7 @@ group = "app.futured.arkitekt"
  This version supports New Native Memory Model
  https://github.com/JetBrains/kotlin/blob/master/kotlin-native/NEW_MM.md
  */
-version = "0.2.0-SNAPSHOT-MM"
+version = "0.2.0-MM-SNAPSHOT"
 
 repositories {
     // for dokkaHtml, todo remove when dokkaHtml is available at mavenCentral (ver 0.7.3 isn't)
