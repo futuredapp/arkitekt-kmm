@@ -2,12 +2,13 @@ package app.futured.arkitekt.kmusecases.scope
 
 import app.futured.arkitekt.kmusecases.usecase.FlowUseCase
 import app.futured.arkitekt.kmusecases.usecase.UseCase
-import app.futured.arkitekt.kmusecases.workerDispatcher
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 
 actual interface CoroutineScopeOwner {
     actual val coroutineScope: CoroutineScope
+
+    actual fun getWorkerDispatcher(): CoroutineDispatcher = Dispatchers.IO
 
     fun <Arg, ReturnType> UseCase<Arg, ReturnType>.execute(
         arg: Arg,
@@ -18,10 +19,10 @@ actual interface CoroutineScopeOwner {
             return@run build()
         }
         if (useCaseConfig.disposePrevious) {
-            job.get()?.cancel()
+            job?.cancel()
         }
         useCaseConfig.onStart()
-        job.set(runJob(arg, this, useCaseConfig.onSuccess, useCaseConfig.onError))
+        job = runJob(arg, this, useCaseConfig.onSuccess, useCaseConfig.onError)
     }
 
     private fun <Arg, ReturnType> runJob(
@@ -31,7 +32,7 @@ actual interface CoroutineScopeOwner {
         onError: (Throwable) -> Unit
     ): Job {
         return coroutineScope.async(
-            context = workerDispatcher,
+            context = getWorkerDispatcher(),
             start = CoroutineStart.LAZY
         ) { uc.build(arg) }
             .also {
@@ -62,11 +63,11 @@ actual interface CoroutineScopeOwner {
         }
 
         if (flowUseCaseConfig.disposePrevious) {
-            job.get()?.cancel()
+            job?.cancel()
         }
 
-        job.set(build(args)
-            .flowOn(workerDispatcher)
+        job = build(args)
+            .flowOn(getWorkerDispatcher())
             .onStart { flowUseCaseConfig.onStart() }
             .onEach { flowUseCaseConfig.onNext(it) }
             .onCompletion { error ->
@@ -79,7 +80,7 @@ actual interface CoroutineScopeOwner {
                 }
             }
             .catch { /* handled in onCompletion */ }
-            .launchIn(coroutineScope))
+            .launchIn(coroutineScope)
     }
 
     /**

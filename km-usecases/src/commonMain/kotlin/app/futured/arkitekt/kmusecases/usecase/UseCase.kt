@@ -1,22 +1,11 @@
 package app.futured.arkitekt.kmusecases.usecase
 
-import app.futured.arkitekt.kmusecases.atomics.AtomicRef
 import app.futured.arkitekt.kmusecases.scope.CoroutineScopeOwner
-import app.futured.arkitekt.kmusecases.freeze
-import app.futured.arkitekt.kmusecases.workerDispatcher
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 
 abstract class UseCase<Arg, ReturnType> {
 
-    var job: AtomicRef<Job?> = AtomicRef(null)
-
-//    init { todo this must be in child, not here
-//        freeze()
-//    }
+    var job: Job? = null
 
     abstract suspend fun build(arg: Arg): ReturnType
 
@@ -29,32 +18,27 @@ abstract class UseCase<Arg, ReturnType> {
         val useCaseConfig = UseCaseConfig.Builder<ReturnType>().run {
             config(this)
             return@run build()
-        }.freeze()
+        }
         if (useCaseConfig.disposePrevious) {
-            job.get()?.cancel()
+            job?.cancel()
         }
         useCaseConfig.onStart()
-        job.set(getJob(arg, useCaseConfig.onSuccess, useCaseConfig.onError))
+        job = getJob(arg, useCaseConfig.onSuccess, useCaseConfig.onError)
     }
 
     private fun CoroutineScopeOwner.getJob(
         arg: Arg,
         onSuccess: (ReturnType) -> Unit,
         onError: (Throwable) -> Unit
-    ): Job {
-        arg.freeze()
-        onSuccess.freeze()
-        onError.freeze()
-        return coroutineScope.async { buildOnBg(arg) }
-            .also {
-                coroutineScope.launch {
-                    kotlin.runCatching { it.await() }
-                        .fold(onSuccess, onError)
-                }
-            }.freeze()
-    }
+    ): Job = coroutineScope.async { buildOnBg(arg, getWorkerDispatcher()) }
+        .also {
+            coroutineScope.launch {
+                kotlin.runCatching { it.await() }
+                    .fold(onSuccess, onError)
+            }
+        }
 
-    private suspend fun buildOnBg(arg: Arg) = withContext(workerDispatcher) {
+    private suspend fun buildOnBg(arg: Arg, workerDispatcher: CoroutineDispatcher) = withContext(workerDispatcher) {
         this@UseCase.build(arg)
     }
 

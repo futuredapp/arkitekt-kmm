@@ -1,20 +1,13 @@
 package app.futured.arkitekt.kmusecases.usecase
 
-import app.futured.arkitekt.kmusecases.atomics.AtomicRef
-import app.futured.arkitekt.kmusecases.freeze
 import app.futured.arkitekt.kmusecases.scope.CoroutineScopeOwner
-import app.futured.arkitekt.kmusecases.workerDispatcher
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.*
 
 abstract class FlowUseCase<Arg, ReturnType> {
 
-    var job: AtomicRef<Job?> = AtomicRef(null)
-
-//    init { todo this must be in child, not here
-//        freeze()
-//    }
+    var job: Job? = null
 
     abstract fun build(arg: Arg): Flow<ReturnType>
 
@@ -27,28 +20,26 @@ abstract class FlowUseCase<Arg, ReturnType> {
         val flowUseCaseConfig = FlowUseCaseConfig.Builder<ReturnType>().run {
             config(this)
             return@run build()
-        }.freeze()
+        }
 
         if (flowUseCaseConfig.disposePrevious) {
-            job.get()?.cancel()
+            job?.cancel()
         }
-        job.set(build(args)
-            .flowOn(workerDispatcher)
+        job = build(args)
+            .flowOn(getWorkerDispatcher())
             .onStart { flowUseCaseConfig.onStart() }
-            .onEach { flowUseCaseConfig.onNext(it.freeze()) }
+            .onEach { flowUseCaseConfig.onNext(it) }
             .onCompletion { error ->
                 when {
                     error is CancellationException -> {
                         // ignore this exception
                     }
-                    error != null -> flowUseCaseConfig.onError(error.freeze())
+                    error != null -> flowUseCaseConfig.onError(error)
                     else -> flowUseCaseConfig.onComplete()
                 }
             }
             .catch { /* handled in onCompletion */ }
             .launchIn(coroutineScope)
-            .freeze()
-        )
     }
 
     /**

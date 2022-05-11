@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "app.futured.arkitekt"
-version = "0.1.2-SNAPSHOT"
+version = "0.3.0"
 
 repositories {
     // for dokkaHtml, todo remove when dokkaHtml is available at mavenCentral (ver 0.7.3 isn't)
@@ -38,10 +38,11 @@ kotlin {
         }
     }
 
+    @Suppress("UNUSED_VARIABLE")
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(app.futured.arkitekt.Dependencies.KotlinX.coroutinesMt)
+                implementation(app.futured.arkitekt.Dependencies.KotlinX.coroutines)
                 implementation(project(":km-usecases"))
             }
         }
