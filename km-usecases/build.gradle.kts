@@ -10,7 +10,7 @@ group = "app.futured.arkitekt"
  This version supports New Native Memory Model
  https://github.com/JetBrains/kotlin/blob/master/kotlin-native/NEW_MM.md
  */
-version = "0.3.0"
+version = "0.3.0-SNAPSHOT"
 
 repositories {
     // for dokkaHtml, todo remove when dokkaHtml is available at mavenCentral (ver 0.7.3 isn't)
@@ -64,7 +64,7 @@ kotlin {
         val androidTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
-                implementation("junit:junit:4.13")
+                implementation("junit:junit:4.13.2")
             }
         }
         val iosMain by getting
