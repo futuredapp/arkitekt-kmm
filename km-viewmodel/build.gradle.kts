@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "app.futured.arkitekt"
-version = "0.3.0-SNAPSHOT"
+version = "0.3.1-SNAPSHOT"
 
 repositories {
     // for dokkaHtml, todo remove when dokkaHtml is available at mavenCentral (ver 0.7.3 isn't)
@@ -31,6 +31,13 @@ val javadocJar = tasks.register<Jar>("javadocJar") {
 
 kotlin {
     ios {
+        binaries {
+            framework {
+                baseName = "km-viewmodel"
+            }
+        }
+    }
+    iosSimulatorArm64 {
         binaries {
             framework {
                 baseName = "km-viewmodel"
