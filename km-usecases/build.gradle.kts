@@ -10,7 +10,7 @@ group = "app.futured.arkitekt"
  This version supports New Native Memory Model
  https://github.com/JetBrains/kotlin/blob/master/kotlin-native/NEW_MM.md
  */
-version = "0.3.0-SNAPSHOT"
+version = "0.3.1-SNAPSHOT"
 
 repositories {
     // for dokkaHtml, todo remove when dokkaHtml is available at mavenCentral (ver 0.7.3 isn't)
@@ -47,6 +47,15 @@ kotlin {
         }
     }
 
+    iosSimulatorArm64 {
+        binaries {
+            framework {
+                baseName = "km-usecases"
+            }
+        }
+    }
+
+
     @Suppress("UNUSED_VARIABLE")
     sourceSets {
         val commonMain by getting {
@@ -67,8 +76,24 @@ kotlin {
                 implementation("junit:junit:4.13.2")
             }
         }
-        val iosMain by getting
-        val iosTest by getting
+        val iosX64Main by getting
+        val iosArm64Main by getting
+        val iosSimulatorArm64Main by getting
+        val iosMain by getting {
+            dependsOn(commonMain)
+            iosX64Main.dependsOn(this)
+            iosArm64Main.dependsOn(this)
+            iosSimulatorArm64Main.dependsOn(this)
+        }
+        val iosX64Test by getting
+        val iosArm64Test by getting
+        val iosSimulatorArm64Test by getting
+        val iosTest by getting {
+            dependsOn(commonTest)
+            iosX64Test.dependsOn(this)
+            iosArm64Test.dependsOn(this)
+            iosSimulatorArm64Test.dependsOn(this)
+        }
     }
 }
 
