@@ -1,0 +1,6 @@
+package app.futured.arkitekt.kmusecasescommon.scope
+
+import app.futured.arkitekt.kmusecasescommon.scope.FlowUseCaseExecutionScope
+import app.futured.arkitekt.kmusecasescommon.scope.SingleUseCaseExecutionScope
+
+interface UseCaseExecutionScope: SingleUseCaseExecutionScope, FlowUseCaseExecutionScope
