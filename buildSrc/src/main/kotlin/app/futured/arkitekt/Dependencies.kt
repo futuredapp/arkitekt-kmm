@@ -2,7 +2,7 @@ package app.futured.arkitekt
 
 object Dependencies {
     object Kotlin {
-        const val version = "1.6.10"
+        const val version = "1.7.20"
 
         const val gradlePlugin = "gradle-plugin"
     }
@@ -14,7 +14,7 @@ object Dependencies {
     }
 
     object Android {
-        private const val agpVersion = "7.0.3"
+        private const val agpVersion = "7.3.1"
 
         const val gradlePlugin = "com.android.tools.build:gradle:$agpVersion"
     }
