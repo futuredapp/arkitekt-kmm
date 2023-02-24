@@ -10,7 +10,7 @@ group = "app.futured.arkitekt"
  This version supports New Native Memory Model
  https://github.com/JetBrains/kotlin/blob/master/kotlin-native/NEW_MM.md
  */
-version = "0.3.1-SNAPSHOT"
+version = "0.3.2-SNAPSHOT"
 
 repositories {
     // for dokkaHtml, todo remove when dokkaHtml is available at mavenCentral (ver 0.7.3 isn't)
@@ -98,10 +98,10 @@ kotlin {
 }
 
 android {
-    compileSdk = 31
+    compileSdk = app.futured.arkitekt.Project.Android.targetSdkVersion
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdk = 24
-        targetSdk = 31
+        minSdk = app.futured.arkitekt.Project.Android.minSdkVersion
+        targetSdk = app.futured.arkitekt.Project.Android.targetSdkVersion
     }
 }
