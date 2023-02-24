@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "app.futured.arkitekt"
-version = "1.0-SNAPSHOT"
+version = "1.1-SNAPSHOT"
 
 repositories {
     // for dokkaHtml, todo remove when dokkaHtml is available at mavenCentral (ver 0.7.3 isn't)
@@ -63,10 +63,10 @@ kotlin {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = app.futured.arkitekt.Project.Android.targetSdkVersion
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdk = 24
-        targetSdk = 33
+        minSdk = app.futured.arkitekt.Project.Android.minSdkVersion
+        targetSdk = app.futured.arkitekt.Project.Android.targetSdkVersion
     }
 }
